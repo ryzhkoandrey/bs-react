@@ -14,7 +14,7 @@
       <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
       <script>
-         const helloWorldHeading = React.createElement(
+         const reactHeading = React.createElement(
             'h1',
             null,
             'Hello from React'
@@ -23,14 +23,14 @@
          const container = document.getElementById('react-app');
          const root = ReactDOM.createRoot(container);
 
-         root.render(helloWorldHeading);
+         root.render(reactHeading);
       </script>
 
       <script>
-         const heading = document.createElement('h1');
-         heading.textContent = 'Hello from Vanilla JS';
+         const vanillaJsHeading = document.createElement('h1');
+         vanillaJsHeading.textContent = 'Hello from Vanilla JS';
 
-         document.getElementById('vanilla-app').appendChild(heading);
+         document.getElementById('vanilla-app').appendChild(vanillaJsHeading);
       </script>
    </body>
 </html>
