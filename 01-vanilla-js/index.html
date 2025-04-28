@@ -10,8 +10,11 @@
             text-align: center;
          }
 
-         .green-btn {
+         button {
             font-size: 50px;
+         }
+
+         .green-btn {
             color: white;
             background-color: green;
          }
@@ -19,19 +22,16 @@
    </head>
    <body>
       <div class="app">
-         <button
-            class="green-btn"
-            id="my-button"
-            onclick="changeButtonText('my-button')"
-         >
+         <button id="my-button" onclick="changeButton('my-button')">
             Click me
          </button>
       </div>
 
       <script>
-         function changeButtonText(id) {
+         function changeButton(id) {
             const myButton = document.getElementById(id);
             myButton.innerHTML = 'Hello from Vanilla JS';
+            myButton.className('green-btn');
          }
       </script>
    </body>
