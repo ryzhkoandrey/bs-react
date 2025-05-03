@@ -7,10 +7,14 @@ function generateRandomNum() {
 function RandomNumber() {
    const [randomNum, setRandomNum] = useState(generateRandomNum());
 
+   const changeRandomNum = () => {
+      setRandomNum(generateRandomNum());
+   };
+
    return (
       <div>
          <h1>{randomNum}</h1>
-         <button>Generate new random number</button>
+         <button onClick={changeRandomNum}>Generate new random number</button>
       </div>
    );
 }
