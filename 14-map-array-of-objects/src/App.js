@@ -2,7 +2,13 @@ import './App.css';
 import persons from './data/persons';
 
 function App() {
-   return <div className='App'></div>;
+   return (
+      <div className='App'>
+         {persons.map((person) => {
+            return <h1 key={person.id}>{person.firstName}</h1>;
+         })}
+      </div>
+   );
 }
 
 export default App;
