@@ -3,7 +3,14 @@ import './App.css';
 import Counter from './components/Counter';
 import Button from './components/Button';
 
-const texts = ['Click me', 'Click me please', 'Hit me', 'Press me'];
+const texts = [
+   'Click me',
+   'Click me please',
+   'Hit me',
+   'Press me',
+   'Click me again!',
+   'Press me!!!',
+];
 
 function App() {
    const [count, setCount] = useState(0);
@@ -15,10 +22,9 @@ function App() {
    return (
       <div className='App'>
          <Counter count={count} />
-         <Button text={texts[0]} onClick={incrementCount} />
-         <Button text={texts[1]} onClick={incrementCount} />
-         <Button text={texts[2]} onClick={incrementCount} />
-         <Button text={texts[3]} onClick={incrementCount} />
+         {texts.map((text) => {
+            return <Button onClick={incrementCount} text={text} />;
+         })}
       </div>
    );
 }
