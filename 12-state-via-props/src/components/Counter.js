@@ -1,5 +1,5 @@
-function Counter() {
-   return <h1>Total clicks: 0</h1>;
+function Counter({ count }) {
+   return <h1>Total clicks: {count}</h1>;
 }
 
 export default Counter;
