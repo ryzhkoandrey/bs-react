@@ -3,7 +3,7 @@ import Person from './Person';
 
 function Persons() {
    return (
-      <div>
+      <div className='cards'>
          {persons.map((person) => {
             return <Person key={person.id} {...person} />;
          })}
