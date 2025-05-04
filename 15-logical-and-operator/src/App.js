@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Counter from './components/Counter';
 import Button from './components/Button';
+import Reset from './components/Reset';
 
 function App() {
    const [count, setCount] = useState(0);
@@ -14,8 +15,6 @@ function App() {
       setCount(0);
    };
 
-   const buttonStyle = { backgroundColor: 'lightgreen' };
-
    return (
       <div className='App'>
          <Counter count={count} />
@@ -23,13 +22,7 @@ function App() {
          <Button onClick={incrementCount} />
          <Button onClick={incrementCount} />
          <Button onClick={incrementCount} />
-         {count > 0 && (
-            <div>
-               <button style={buttonStyle} onClick={resetCount}>
-                  Reset
-               </button>
-            </div>
-         )}
+         {count > 0 && <Reset onClick={resetCount} />}
       </div>
    );
 }
