@@ -2,20 +2,22 @@ import { useEffect, useState } from 'react';
 import Post from './Post';
 
 function Posts() {
-   const [posts, setPosts] = useState(null);
+   const [posts, setPosts] = useState([]);
 
    useEffect(() => {
       fetch('https://jsonplaceholder.typicode.com/posts')
          .then((response) => response.json())
-         .then((json) => setPosts(json));
+         .then((posts) => {
+            setPosts(posts);
+         })
+         .catch((error) => console.log(error.message));
    }, []);
-
-   console.log(posts);
 
    return (
       <div>
-         <Post />
-         <Post />
+         {posts.map((post) => {
+            return <Post key={post.id} {...post} />;
+         })}
       </div>
    );
 }
