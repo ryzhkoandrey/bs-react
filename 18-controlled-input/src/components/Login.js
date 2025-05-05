@@ -10,6 +10,10 @@ function Login() {
       alert(JSON.stringify(data));
    }
 
+   function handleInputChange(name, value) {
+      setData({ ...data, [name]: value });
+   }
+
    return (
       <>
          <h1>Login form</h1>
@@ -21,7 +25,7 @@ function Login() {
                   type="text"
                   value={data.username}
                   onChange={(e) =>
-                     setData({ ...data, username: e.target.value })
+                     handleInputChange('username', e.target.value)
                   }
                />
             </label>
@@ -32,7 +36,7 @@ function Login() {
                   type="password"
                   value={data.password}
                   onChange={(e) =>
-                     setData({ ...data, password: e.target.value })
+                     handleInputChange('password', e.target.value)
                   }
                />
             </label>
