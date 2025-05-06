@@ -1,6 +1,8 @@
+import './Post.css';
+
 function Post({ id, userId, title, body }) {
    return (
-      <div>
+      <div className='post'>
          <small>{id}</small>
          <h2>{title}</h2>
          <p>{body}</p>
