@@ -1,5 +1,5 @@
 function Todo({ todo }) {
-   return <h2>{todo}</h2>;
+   return <h3>{todo}</h3>;
 }
 
 export default Todo;
