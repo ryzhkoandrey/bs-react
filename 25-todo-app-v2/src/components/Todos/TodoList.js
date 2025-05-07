@@ -6,11 +6,12 @@ function TodoList({ todos, deleteTodo }) {
       <div className={styles.todoListContainer}>
          {!todos.length && <h2>Todo list is empty</h2>}
 
-         {todos.map((todo, index) => (
+         {todos.map(({ text, isCompleted, id }) => (
             <Todo
-               key={index}
-               todo={todo}
-               index={index}
+               key={id}
+               text={text}
+               isCompleted={isCompleted}
+               id={id}
                deleteTodo={deleteTodo}
             />
          ))}
