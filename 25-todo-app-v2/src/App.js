@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import TodoForm from './components/Todos/TodoForm';
 import TodoList from './components/Todos/TodoList';
 import './App.css';
@@ -7,7 +8,8 @@ function App() {
    const [todos, setTodos] = useState([]);
 
    const addTodoHandler = (text) => {
-      const newTodo = { text: text, isCompleted: false, id: 0 };
+      const newTodo = { text: text, isCompleted: false, id: uuidv4() };
+      console.log(newTodo);
       setTodos([...todos, newTodo]);
    };
 
