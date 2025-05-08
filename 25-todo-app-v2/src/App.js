@@ -45,10 +45,12 @@ function App() {
 
          <TodoForm addTodo={addTodoHandler} />
 
-         <TodosActions
-            resetTodos={resetTodosHandler}
-            deleteCompletedTodos={deleteCompletedTodosHandler}
-         />
+         {todos.length > 0 && (
+            <TodosActions
+               resetTodos={resetTodosHandler}
+               deleteCompletedTodos={deleteCompletedTodosHandler}
+            />
+         )}
 
          <TodoList
             todos={todos}
