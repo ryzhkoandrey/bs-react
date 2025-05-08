@@ -22,11 +22,11 @@ function App() {
 
    const toggleTodoHandler = (id) => {
       setTodos(
-         todos.map((todo) => {
-            return todo.id === id
+         todos.map((todo) =>
+            todo.id === id
                ? { ...todo, isCompleted: !todo.isCompleted }
-               : todo;
-         })
+               : { ...todo }
+         )
       );
    };
 

@@ -6,9 +6,7 @@ function Todo({ todo, deleteTodo, toggleTodo }) {
    return (
       <div
          className={
-            todo.isCompleted === true
-               ? (styles.todo, styles.completedTodo)
-               : styles.todo
+            todo.isCompleted ? (styles.todo, styles.completedTodo) : styles.todo
          }
       >
          <RiTodoFill className={styles.todoIcon} />
