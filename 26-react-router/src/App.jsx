@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import MainLayout from './layouts/MainLayout';
 import Home from './components/Home';
 import About from './components/About';
 import Contacts from './components/Contacts';
@@ -10,7 +11,7 @@ function App() {
       <BrowserRouter>
          <div className="App">
             <Routes>
-               <Route path="/" element={<Home />}>
+               <Route path="/" element={<MainLayout />}>
                   <Route path="about" element={<About />} />
                   <Route path="contacts" element={<Contacts />} />
                   <Route path="*" element={<NotFound />} />
