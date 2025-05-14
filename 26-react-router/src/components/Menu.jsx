@@ -7,9 +7,7 @@ const Menu = () => {
             Home
          </NavLink>
 
-         <NavLink to="courses" end>
-            Courses
-         </NavLink>
+         <NavLink to="courses">Courses</NavLink>
 
          <NavLink to="about">About</NavLink>
 
