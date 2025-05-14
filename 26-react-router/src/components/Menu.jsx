@@ -4,7 +4,9 @@ const Menu = () => {
    return (
       <nav>
          <NavLink
-            className={({ isActive }) => (isActive ? 'activeLink' : 'link')}
+            style={({ isActive }) =>
+               isActive ? { color: 'lightyellow', textDecoration: 'none' } : {}
+            }
             to="."
             end
          >
