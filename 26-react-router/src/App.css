@@ -2,7 +2,7 @@
    text-align: center;
 }
 
-.activeLink {
+.active {
    color: lightyellow;
    text-decoration: none;
 }
