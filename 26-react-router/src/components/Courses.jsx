@@ -5,6 +5,9 @@ import courses from '../data/courses.js';
 
 function sortCourses(courses, key) {
    const sortedCourses = [...courses];
+
+   if (!key) return sortedCourses;
+
    return sortedCourses.sort((a, b) => (a[key] > b[key] ? 1 : -1));
 }
 
@@ -16,7 +19,7 @@ const Courses = () => {
 
    return (
       <>
-         <h1>Courses</h1>
+         <h1>{sortKey ? `Courses sorted by ${sortKey}` : 'Courses'}</h1>
 
          {sortedCourses.map((course) => (
             <div key={course.id}>
