@@ -1,7 +1,7 @@
 import UserInfo from './UserInfo';
 
-function User({ user }) {
-   return <UserInfo user={user} />;
+function User() {
+   return <UserInfo />;
 }
 
 export default User;
