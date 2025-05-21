@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import User from './components/User';
 import './App.css';
+import User from './components/User';
 
 function App() {
    const [user, setUser] = useState('Bogdan');
 
    return (
       <div className="App">
-         <User />
+         <User user={user} />
       </div>
    );
 }
