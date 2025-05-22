@@ -7,7 +7,7 @@ function App() {
    const [user, setUser] = useState('Bogdan');
 
    return (
-      <UserContext.Provider value={user}>
+      <UserContext.Provider value={{ user, setUser }}>
          <div className="App">
             <User />
          </div>
