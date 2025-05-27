@@ -1,19 +1,33 @@
 const initialState = [];
 
 function reducer(state, action) {
-   if (action.type === 'ADD_NAME') {
-      return [...state, action.payload];
+   switch (action.type) {
+      case 'ADD_NAME':
+         return [...state, action.payload];
+
+      case 'DELETE_NAME':
+         return state.filter((personName) => personName !== action.payload);
+
+      case 'CLEAR_NAMES':
+         return [];
+
+      default:
+         return state;
    }
 
-   if (action.type === 'DELETE_NAME') {
-      return state.filter((personName) => personName !== action.payload);
-   }
+   // if (action.type === 'ADD_NAME') {
+   //    return [...state, action.payload];
+   // }
 
-   if (action.type === 'CLEAR_NAMES') {
-      return [];
-   }
+   // if (action.type === 'DELETE_NAME') {
+   //    return state.filter((personName) => personName !== action.payload);
+   // }
 
-   return state;
+   // if (action.type === 'CLEAR_NAMES') {
+   //    return [];
+   // }
+
+   // return state;
 }
 
 let newState = reducer(initialState, {
