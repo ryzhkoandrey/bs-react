@@ -9,6 +9,10 @@ function reducer(state, action) {
       return state.filter((personName) => personName !== action.payload);
    }
 
+   if (action.type === 'CLEAR_NAMES') {
+      return [];
+   }
+
    return state;
 }
 
@@ -27,5 +31,22 @@ console.log(newState);
 newState = reducer(newState, {
    type: 'DELETE_NAME',
    payload: 'Alice',
+});
+console.log(newState);
+
+newState = reducer(newState, {
+   type: 'CLEAR_NAMES',
+});
+console.log(newState);
+
+newState = reducer(newState, {
+   type: 'ADD_NAME',
+   payload: 'Andrey',
+});
+console.log(newState);
+
+newState = reducer(newState, {
+   type: 'ADD_NAME',
+   payload: 'Ava',
 });
 console.log(newState);
