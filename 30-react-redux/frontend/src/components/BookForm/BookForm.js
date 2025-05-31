@@ -10,7 +10,6 @@ const BookForm = () => {
 
       if (title && author) {
          // dispatch action
-         console.log(title, author);
 
          setTitle('');
          setAuthor('');
