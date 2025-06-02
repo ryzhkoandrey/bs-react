@@ -1,8 +1,16 @@
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { deleteBook } from '../../redux/books/actionCreators';
 import './BookList.css';
 
 const BookList = () => {
    const books = useSelector((state) => state.books);
+   const dispatch = useDispatch();
+
+   const handleDeleteBook = (id) => {
+      const newArray = books.filter((book) => book.id !== id);
+      dispatch(deleteBook(newArray));
+   };
 
    return (
       <div className="app-block book-list">
@@ -16,6 +24,16 @@ const BookList = () => {
                   <li key={book.id}>
                      <div className="book-info">
                         {i + 1}. {book.title} by <strong>{book.author}</strong>
+                     </div>
+
+                     <div className="book-actions">
+                        <button
+                           onClick={() => {
+                              handleDeleteBook(book.id);
+                           }}
+                        >
+                           Delete
+                        </button>
                      </div>
                   </li>
                ))}
