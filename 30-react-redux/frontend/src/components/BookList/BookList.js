@@ -1,5 +1,4 @@
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { deleteBook } from '../../redux/books/actionCreators';
 import './BookList.css';
 
@@ -8,8 +7,7 @@ const BookList = () => {
    const dispatch = useDispatch();
 
    const handleDeleteBook = (id) => {
-      const newArray = books.filter((book) => book.id !== id);
-      dispatch(deleteBook(newArray));
+      dispatch(deleteBook(id));
    };
 
    return (
@@ -27,11 +25,7 @@ const BookList = () => {
                      </div>
 
                      <div className="book-actions">
-                        <button
-                           onClick={() => {
-                              handleDeleteBook(book.id);
-                           }}
-                        >
+                        <button onClick={() => handleDeleteBook(book.id)}>
                            Delete
                         </button>
                      </div>

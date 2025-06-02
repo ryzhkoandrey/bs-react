@@ -7,9 +7,9 @@ export const addBook = (newBook) => {
    };
 };
 
-export const deleteBook = (newArray) => {
+export const deleteBook = (id) => {
    return {
       type: actionTypes.DELETE_BOOK,
-      payload: newArray,
+      payload: id,
    };
 };
