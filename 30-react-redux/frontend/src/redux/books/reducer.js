@@ -10,6 +10,9 @@ const booksReducer = (state = initialState, action) => {
       case a.DELETE_BOOK:
          return state.filter((book) => book.id !== action.payload);
 
+      case a.TOGGLE_FAVORITE:
+         return state;
+
       default:
          return state;
    }
