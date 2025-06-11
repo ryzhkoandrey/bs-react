@@ -1,3 +1,4 @@
+import { setTitleFilter } from '../../redux/slices/filterSlice';
 import './Filter.css';
 
 const Filter = () => {
