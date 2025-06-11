@@ -14,7 +14,6 @@ function App() {
             <div className="app-left-column">
                <BookForm />
             </div>
-
             <div className="app-right-column">
                <Filter />
                <BookList />
