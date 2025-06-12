@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import {
    setTitleFilter,
-   selectTitleFilter,
    setAuthorFilter,
+   selectTitleFilter,
    selectAuthorFilter,
    resetFilters,
 } from '../../redux/slices/filterSlice';
