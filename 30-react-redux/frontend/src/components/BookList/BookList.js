@@ -23,6 +23,23 @@ const BookList = () => {
       dispatch(toggleFavorite(id));
    };
 
+   const highlightMatch = (text, filter) => {
+      if (!filter) return text;
+
+      const regx = new RegExp(`(${filter})`, 'gi');
+
+      return text.split(regx).map((substring, i) => {
+         if (substring.toLowerCase() === filter.toLowerCase()) {
+            return (
+               <span key={i} className="highlight">
+                  {substring}
+               </span>
+            );
+         }
+         return substring;
+      });
+   };
+
    const filteredBooks = books.filter((book) => {
       const matchesTitle = book.title
          .toLowerCase()
@@ -48,7 +65,8 @@ const BookList = () => {
                {filteredBooks.map((book, i) => (
                   <li key={book.id}>
                      <div className="book-info">
-                        {i + 1}. {book.title} by <strong>{book.author}</strong>
+                        {i + 1}. {highlightMatch(book.title, titleFilter)} by{' '}
+                        <strong>{highlightMatch(book.author, authorFilter)}</strong>
                      </div>
 
                      <div className="book-actions">
