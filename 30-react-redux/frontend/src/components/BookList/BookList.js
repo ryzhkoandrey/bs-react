@@ -32,9 +32,7 @@ const BookList = () => {
          .toLowerCase()
          .includes(authorFilter.toLowerCase());
 
-      const matchesFavorite = onlyFavoriteFilter
-         ? book.isFavorite === onlyFavoriteFilter
-         : true;
+      const matchesFavorite = onlyFavoriteFilter ? book.isFavorite : true;
 
       return matchesTitle && matchesAuthor && matchesFavorite;
    });
