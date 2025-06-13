@@ -37,7 +37,7 @@ const BookList = () => {
       <div className="app-block book-list">
          <h2>Book List</h2>
 
-         {books.length === 0 ? (
+         {filteredBooks.length === 0 ? (
             <p>No books available</p>
          ) : (
             <ul>
