@@ -4,6 +4,7 @@ import {
    setAuthorFilter,
    selectTitleFilter,
    selectAuthorFilter,
+   setOnlyFavoriteFilter,
    resetFilters,
 } from '../../redux/slices/filterSlice';
 import './Filter.css';
