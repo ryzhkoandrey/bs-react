@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import axios from 'axios';
 import { addBook } from '../../redux/slices/booksSlice';
 import createBookWithID from '../../utils/createBookWithID';
 import booksData from '../../data/books.json';
@@ -26,7 +27,9 @@ const BookForm = () => {
       }
    };
 
-   const handleAddRandomBookViaAPI = async () => {};
+   const handleAddRandomBookViaAPI = async () => {
+      const res = await axios.get('http://localhost:4000/random-book');
+   };
 
    return (
       <div className="app-block book-form">
