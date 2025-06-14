@@ -28,7 +28,15 @@ const BookForm = () => {
    };
 
    const handleAddRandomBookViaAPI = async () => {
-      const res = await axios.get('http://localhost:4000/random-book');
+      try {
+         const res = await axios.get('http://localhost:4000/random-book');
+
+         if (res?.data?.title && res?.data?.author) {
+            dispatch(addBook(createBookWithID(res.data)));
+         }
+      } catch (error) {
+         console.log('Error fetching random book', error);
+      }
    };
 
    return (
