@@ -15,13 +15,16 @@ const booksSlice = createSlice({
       },
 
       toggleFavorite: (state, action) => {
-         const book = state.find((book) => book.id === action.payload);
-         if (book) {
-            book.isFavorite = !book.isFavorite;
+         const targetBook = state.find((book) => book.id === action.payload);
+         if (targetBook) {
+            targetBook.isFavorite = !targetBook.isFavorite;
          }
       },
    },
 });
 
 export const { addBook, deleteBook, toggleFavorite } = booksSlice.actions;
+
+export const selectBooks = (state) => state.books;
+
 export default booksSlice.reducer;
