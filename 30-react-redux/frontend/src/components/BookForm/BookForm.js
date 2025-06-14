@@ -26,6 +26,8 @@ const BookForm = () => {
       }
    };
 
+   const handleAddRandomBookViaAPI = async () => {};
+
    return (
       <div className="app-block book-form">
          <h2>Add a New book</h2>
@@ -52,8 +54,13 @@ const BookForm = () => {
             </div>
 
             <button type="submit">Add Book</button>
+
             <button type="button" onClick={handleAddRandomBook}>
                Add Random
+            </button>
+
+            <button type="button" onClick={handleAddRandomBookViaAPI}>
+               Add Random via API
             </button>
          </form>
       </div>
