@@ -35,8 +35,8 @@ const BookForm = () => {
       }
    };
 
-   const handleAddRandomBookViaAPI = async () => {
-      await dispatch(fetchBook('http://localhost:4000/random-book-delayed'));
+   const handleAddRandomBookViaAPI = () => {
+      dispatch(fetchBook('http://localhost:4000/random-book-delayed'));
    };
 
    return (
